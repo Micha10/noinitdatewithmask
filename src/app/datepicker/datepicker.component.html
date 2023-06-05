@@ -1,0 +1,47 @@
+<mat-form-field class="" data-test="wirtschaftsjahr_manuell">
+  <mat-label>ohne Maske</mat-label>
+  <input matInput
+         [matDatepicker]="wjpicker"
+         placeholder="DD.MM.YYYY"
+         name="wirtschaftsjahr"
+         [(ngModel)]="ohneMaske"
+         data-test="wirtschaftsjahr"
+  />
+  <mat-datepicker-toggle matSuffix [for]="wjpicker"></mat-datepicker-toggle>
+  <mat-datepicker #wjpicker></mat-datepicker>
+</mat-form-field>
+
+<hr>
+
+<mat-form-field>
+  <mat-label>S_Datum wählen:</mat-label>
+  <input matInput [matDatepicker]="picker"
+         [(ngModel)]="inhalt" [inputMask]="stringInputMask"
+         (dateInput)="stringpickerinput($event)"
+  >
+
+  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+<hr>
+<mat-form-field>
+  <mat-label>D_Datum wählen:</mat-label>
+  <input matInput [matDatepicker]="picker2"
+         [(ngModel)]="datedate" [inputMask]="dateInputMask"
+         (dateInput)="datepickerinput($event)"
+  >
+  <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+  <mat-datepicker #picker2></mat-datepicker>
+</mat-form-field>
+
+<hr>
+
+<mat-form-field>
+  <mat-label>M_Datum wählen:</mat-label>
+  <input matInput [matDatepicker]="picker3"
+         [(ngModel)]="momdate" [inputMask]="momentInputMask"
+
+  >
+  <mat-datepicker-toggle matIconSuffix [for]="picker3"></mat-datepicker-toggle>
+  <mat-datepicker #picker3></mat-datepicker>
+</mat-form-field>
